@@ -28,6 +28,7 @@
     "prettier": "^3.2.5",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
     "react-scripts": "5.0.1",
     "ts-jest": "^29.1.3",
     "typescript": "^4.4.2",
@@ -41,7 +42,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "jest",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "jest-preview": "jest-preview"
   },
   "eslintConfig": {
     "extends": [
