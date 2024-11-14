@@ -4,7 +4,6 @@ import { setupServer } from "msw/node";
 import SignUp from "./";
 import { handlers } from "./handlers";
 import { debug } from "jest-preview";
-import { useNavigate } from "react-router-dom";
 
 // Setting up the mock server
 const server = setupServer();
@@ -12,12 +11,6 @@ beforeAll(() => server.listen({ onUnhandledRequest: "error" }));
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-const mockNavigate = jest.fn();
-
-jest.mock("react-router-dom", () => ({
-  ...jest.requireActual("react-router-dom"),
-  useNavigate: () => mockNavigate,
-}));
 
 const getters = {
   getUserNameInput: () => screen.getByLabelText(/user name/i),
@@ -40,7 +33,7 @@ describe("SignUp Component", () => {
           target: { value: "mmm.com" },
         });
         fireEvent.change(getters.getPasswordInput(), {
-          target: { value: "1234" },
+          target: { value: "Gf9$Y9FJu$Tacv5" },
         });
         fireEvent.click(getters.getSubmitButton());
       });
